@@ -1,5 +1,5 @@
 const express = require('express') 
-const {create} = require("./repositories/studentRepository")
+const {create, findAll} = require("./repositories/studentRepository")
 
 const app = express()
 const port = 3000;
@@ -15,6 +15,16 @@ app.post("/students", (req,res)=>{
   create(newStudent)
   return res.status(201).json({message: `Student ${newStudent.name} created sucessfully`});
 })
+
+app.get('/students', (req,res)=>{
+  const students = findAll();
+
+  res.json(students);
+  if (students.length === 0) {
+    return res.status(404).json({ error: "Nenhum estudante encontrado" });
+  }
+  res.status(200).json(students);
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
