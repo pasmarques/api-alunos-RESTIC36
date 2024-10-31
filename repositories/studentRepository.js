@@ -17,7 +17,17 @@ function findAll(){
   return students;
 }
 
+function deleteById(id) {
+  const index = students.findIndex(student => student.id === id);
+  if (index !== -1) {
+    const deletedStudent = students.splice(index, 1);
+    return deletedStudent[0];
+  }
+  return null;
+}
+
 module.exports = {
   create,
-  findAll
+  findAll,
+  deleteById,
 }
