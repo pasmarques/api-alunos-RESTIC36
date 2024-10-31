@@ -6,6 +6,8 @@ const port = 3000;
 
 app.use(express.json())
 
+// URL PARA O POSTMAN (POST e GET): http://localhost:3000/students
+
 app.post("/students", (req,res)=>{
   const newStudent = req.body
   
