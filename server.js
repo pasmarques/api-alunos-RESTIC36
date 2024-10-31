@@ -25,7 +25,7 @@ app.get('/students', (req,res)=>{
     return res.status(404).json({ error: "Nenhum estudante encontrado" });
   }
   res.status(200).json(students);
-
+})
   
 app.delete('/students/:id', (req, res) => {
   const { id } = req.params;
