@@ -14,7 +14,7 @@ app.post("/students", (req,res)=>{
   }
   create(newStudent)
   return res.status(201).json({message: `Student ${newStudent.name} created sucessfully`});
-})
+});
 
 
 app.get('/students', (req,res)=>{
@@ -25,7 +25,7 @@ app.get('/students', (req,res)=>{
     return res.status(404).json({ error: "Nenhum estudante encontrado" });
   }
   res.status(200).json(students);
-})
+});
   
 app.delete('/students/:id', (req, res) => {
   const { id } = req.params;
