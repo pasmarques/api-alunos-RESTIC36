@@ -1,5 +1,5 @@
 const express = require('express') 
-const {create, findAll} = require("./repositories/studentRepository")
+const {create, findAll, update} = require("./repositories/studentRepository")
 
 const app = express()
 const port = 3000;
@@ -37,6 +37,23 @@ app.delete('/students/:id', (req, res) => {
     return res.status(200).json({ message: `Student with id ${id} deleted successfully` });
   } else {
     return res.status(404).json({ message: `Student with id ${id} not found` });
+  }
+});
+
+app.put('/students/:id', (req, res) => {
+  const { id } = req.params;
+  const updatedData = req.body;
+
+  if (!updatedData.name && !updatedData.email && !updatedData.course_name) {
+    return res.status(400).json({ message: "Preencha corretamente os campos." });
+  }
+
+  const updatedStudent = update(id, updatedData);
+
+  if (updatedStudent) {
+    return res.status(200).json({ message: `O estudante com o ${id} foi atualizado com sucesso.`, updatedStudent });
+  } else {
+    return res.status(404).json({ message: `O estudante com o id ${id} não foi encontrado.` });
   }
 });
 

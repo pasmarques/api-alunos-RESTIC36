@@ -26,8 +26,27 @@ function deleteById(id) {
   return null;
 }
 
+function update(id, { name, email, course_name }) {
+  
+  const index = students.findIndex(student => student.id === id);
+  
+  if (index !== -1) {
+    students[index] = {
+      ...students[index],
+      name: name,
+      email: email,
+      course_name: course_name,
+    };
+    return students[index];
+  }
+  
+  return null;
+
+}
+
 module.exports = {
   create,
   findAll,
   deleteById,
+  update,
 }
