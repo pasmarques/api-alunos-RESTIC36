@@ -1,5 +1,5 @@
 const express = require('express') 
-const {create, findAll, update} = require("./repositories/studentRepository")
+const {create, findAll, update, deleteById} = require("./repositories/studentRepository")
 
 const app = express()
 const port = 3000;
