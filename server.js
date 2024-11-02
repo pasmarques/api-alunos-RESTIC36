@@ -1,5 +1,5 @@
 const express = require('express') 
-const {create, findAll, update, deleteById} = require("./repositories/studentRepository")
+const {create, findAll, findById, update, deleteById} = require("./repositories/studentRepository")
 
 const app = express()
 const port = 3000;
@@ -22,11 +22,19 @@ app.post("/students", (req,res)=>{
 app.get('/students', (req,res)=>{
   const students = findAll();
 
-  res.json(students);
-  if (students.length === 0) {
+  if (!students) {
     return res.status(404).json({ error: "Nenhum estudante encontrado" });
   }
   res.status(200).json(students);
+});
+
+app.get('/students/:id', (req,res)=>{
+  const { id } =  req.params;
+  const student = findById(id);
+  if (!student) {
+    return res.status(404).json({ error: `Nenhum estudante encontrado para o id: ${id}` });
+  }  
+  res.status(200).json(student);
 });
   
 app.delete('/students/:id', (req, res) => {

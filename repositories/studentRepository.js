@@ -17,6 +17,15 @@ function findAll(){
   return students;
 }
 
+function findById(id){
+  const index = students.findIndex(student => student.id === id);
+  if (index !== -1) {
+    const student = students[index];
+    return student;
+  }
+  return null;
+}
+
 function deleteById(id) {
   const index = students.findIndex(student => student.id === id);
   if (index !== -1) {
@@ -47,6 +56,7 @@ function update(id, { name, email, course_name }) {
 module.exports = {
   create,
   findAll,
+  findById,
   deleteById,
   update,
 }
