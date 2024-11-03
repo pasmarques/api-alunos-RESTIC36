@@ -1,7 +1,7 @@
 
 # **Alunos API**
 
-API desenvolvida em **Express.js** para gerenciar alunos de um curso. A API permite criar, listar, atualizar e remover alunos, com documentação automatizada usando Postman.
+API desenvolvida em **Express.js** para gerenciar alunos de um curso. A API permite criar, listar, atualizar e remover alunos, com documentação feita no Postman.
 
 ## **Tecnologias Utilizadas**
 - **Node.js** com **Express.js**
@@ -85,9 +85,9 @@ Remove um aluno pelo ID.
 ## 🛠️ **Dependências do Projeto**
 ```json
 "dependencies": {
-  "express": "^4.19.2",
-  "nodemon": "^3.1.4",
-  "uuidv4": "^6.2.13"
+   "express": "^4.21.1",
+   "nodemon": "^3.1.7",
+   "uuid": "^10.0.0"
 }
 ```
 
