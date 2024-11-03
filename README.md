@@ -69,7 +69,9 @@ Atualiza o(s) dado(s) de um aluno existente.
 **Corpo da Requisição:**
 ```json
 {
-  
+  "name": "Junior Argolo atualizado",
+  "email": "juniordevAtualizado@gmail.com",
+  "course_name": "Science Computer",
 }
 ```
 
