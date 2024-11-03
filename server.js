@@ -23,7 +23,7 @@ app.get('/students', (req,res)=>{
   const students = findAll();
 
   if (!students) {
-    return res.status(404).json({ error: "Nenhum estudante encontrado" });
+    return res.status(404).json({ error: "No students found" });
   }
   res.status(200).json(students);
 });
