@@ -56,6 +56,12 @@ Retorna todos os alunos cadastrados.
 
 ---
 
+### **Buscar Aluno**
+`GET /students/:id`  
+Busca um aluno pelo ID.
+
+---
+
 ### **Atualizar Aluno**
 `PUT /students/:id`  
 Atualiza o(s) dado(s) de um aluno existente.
@@ -69,9 +75,9 @@ Atualiza o(s) dado(s) de um aluno existente.
 
 ---
 
-### **Deletar Vaga**
+### **Deletar Aluno**
 `DELETE /students/:id`  
-Remove uma vaga pelo ID.
+Remove um aluno pelo ID.
 
 ---
 
