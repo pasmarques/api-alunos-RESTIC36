@@ -5,7 +5,6 @@ API desenvolvida em **Express.js** para gerenciar alunos de um curso. A API perm
 
 ## **Tecnologias Utilizadas**
 - **Node.js** com **Express.js**
-- **SQLite** para armazenamento de dados
 - **Postman** para documentação
 - **Nodemon** para reinicialização automática durante o desenvolvimento
 - **UUIDv4** para geração de IDs únicos
@@ -88,7 +87,6 @@ Remove um aluno pelo ID.
 "dependencies": {
   "express": "^4.19.2",
   "nodemon": "^3.1.4",
-  "sqlite3": "^5.1.7",
   "uuidv4": "^6.2.13"
 }
 ```
